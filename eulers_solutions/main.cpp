@@ -1,4 +1,5 @@
 #include <iostream>
+//#include <cstdint>
 
 using namespace std;
 
@@ -63,18 +64,56 @@ return sum;
 }
 
 
+
+/** \brief
+ *
+The prime factors of 13195 are 5, 7, 13 and 29.
+
+What is the largest prime factor of the number 600851475143 ?
+ * \param: None
+ * \return: largest prime factor of the number 600851475143
+ *
+ */
+ int largestPrimeFactor()
+ {
+  unsigned long long num = 600851475143ULL;
+
+  for ( unsigned long long i = 2; i*i < num; ++i)
+  {
+    while (num % i == 0)
+    {
+      if (num > i)
+      {
+        num /= i; // keep reducing the number once the factor is found so that we dont have to compute everything again.
+      }
+      //cout << "Factor is: " << i << endl;
+      //cout << "Number  is: " << num << endl;
+    }
+  }
+    return num;
+ }
+
+
 int main()
 {
     cout<<"---------------------------------------------------------------------"<<endl;
-    cout << "This Program is to keep track of solutions to the problems posted on" << endl;
+    cout <<"This Program is to keep track of solutions to the problems posted on" << endl;
     cout <<"Project Euler"<<endl;
     cout<<"---------------------------------------------------------------------"<<endl<<endl<<endl;
+
     cout<<"---------------------------------------------------------------------"<<endl;
     cout<< "Problem 1: Sum of all the multiples of 3 or 5 below 1000 is: "<<endl;
     cout<< multiplesOfThreeAndFive() <<endl;
     cout<<"---------------------------------------------------------------------"<<endl;
+
+
     cout<< "Problem 2: Sum of even valued terms in a Fibonacci series below 4 million is: "<<endl;
     cout<< sumOFEvenVAluedTermsFibonacci() <<endl;
+    cout<<"---------------------------------------------------------------------"<<endl;
+
+
+    cout<< "Problem 3: Largest Prime Factor of 600851475143 is: "<<endl;
+    cout<< largestPrimeFactor() <<endl;
     cout<<"---------------------------------------------------------------------"<<endl;
     return 0;
 }
