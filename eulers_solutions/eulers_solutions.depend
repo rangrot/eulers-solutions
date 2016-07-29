@@ -1,4 +1,6 @@
 # depslib dependency file v1.0
-1469746760 source:c:\users\rpounda\downloads\rohan_docs\projects\eulers_solutions\eulers-solutions\eulers_solutions\main.cpp
+1469753406 source:c:\users\rpounda\downloads\rohan_docs\projects\eulers_solutions\eulers-solutions\eulers_solutions\main.cpp
 	<iostream>
+	<string>
+	<sstream>
 

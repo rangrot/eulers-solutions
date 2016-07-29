@@ -1,5 +1,7 @@
 #include <iostream>
 //#include <cstdint>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -94,6 +96,53 @@ What is the largest prime factor of the number 600851475143 ?
  }
 
 
+/** \brief
+ *  Helper Function reverse Digits for the function largestPalindromeProduct
+ * \param: int num : integer value whose digits have to be reversed.
+ * \return: revNum : the reversed digits of parameter num
+ *
+ */
+//
+ int reverseDigits(int num)
+{
+    int revNum = 0;
+
+    while (num != 0)
+    {
+        int digit = num % 10;
+        revNum = revNum * 10 + digit;
+        num /= 10;
+    }
+
+    return revNum;
+}
+
+/** \brief
+ *
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+Find the largest palindrome made from the product of two 3-digit numbers.
+ * \param: None
+ * \return: largest palindrome made from the product of two 3-digit numbers
+ */
+ int largestPalindromeProduct()
+ {
+  int num = 0;
+  for (int i = 999; i>100; i--)
+  {
+     for(int j = i; j> 100; j--)
+     {
+        int val = i*j;
+        if( val > num && reverseDigits(val) == val)
+        {
+          num = val;
+          //cout << "Palindrome is: "<<num<<endl;
+        }
+     }
+
+     }
+    return num;
+  }
+
 int main()
 {
     cout<<"---------------------------------------------------------------------"<<endl;
@@ -114,6 +163,11 @@ int main()
 
     cout<< "Problem 3: Largest Prime Factor of 600851475143 is: "<<endl;
     cout<< largestPrimeFactor() <<endl;
+    cout<<"---------------------------------------------------------------------"<<endl;
+
+
+    cout<< "Problem 4: Largest palindrome made from the product of two 3-digit numbers is: "<<endl;
+    cout<< largestPalindromeProduct() <<endl;
     cout<<"---------------------------------------------------------------------"<<endl;
     return 0;
 }
