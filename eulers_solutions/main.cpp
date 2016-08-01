@@ -143,6 +143,53 @@ Find the largest palindrome made from the product of two 3-digit numbers.
     return num;
   }
 
+
+
+  /** \brief
+   *
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+   * \param: None
+   * \return: the smallest positive number that is evenly divisible by all of the numbers from 1 to 20
+   *
+   */
+
+   int sNoDByOneToTwenty()
+   {
+      int i= 1, num;
+      bool stop = false, divByAll = false;
+      while (!stop)
+      {
+
+       for (int j = 1 ;j <=20 ;j ++)
+       {
+          if (i % j == 0)
+          {
+            num = i;
+            divByAll = true;
+          }
+
+          else
+          {
+            divByAll = false;
+            break;
+          }
+       }
+
+        if(divByAll)
+        {
+          stop = true;
+        }
+
+        i++;
+
+      }
+      return num;
+   }
+
+
 int main()
 {
     cout<<"---------------------------------------------------------------------"<<endl;
@@ -150,6 +197,7 @@ int main()
     cout <<"Project Euler"<<endl;
     cout<<"---------------------------------------------------------------------"<<endl<<endl<<endl;
 
+    /*
     cout<<"---------------------------------------------------------------------"<<endl;
     cout<< "Problem 1: Sum of all the multiples of 3 or 5 below 1000 is: "<<endl;
     cout<< multiplesOfThreeAndFive() <<endl;
@@ -169,6 +217,13 @@ int main()
     cout<< "Problem 4: Largest palindrome made from the product of two 3-digit numbers is: "<<endl;
     cout<< largestPalindromeProduct() <<endl;
     cout<<"---------------------------------------------------------------------"<<endl;
+    */
+
+    cout<< "Problem 5: The smallest positive number that is evenly divisible by all of the numbers from 1 to 20 is: "<<endl;
+    cout<< sNoDByOneToTwenty() <<endl;
+    cout<<"---------------------------------------------------------------------"<<endl;
+
+
     return 0;
 }
 
