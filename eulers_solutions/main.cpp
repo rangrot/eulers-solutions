@@ -350,6 +350,49 @@ return num;
 }
 
 
+/** \brief
+ *A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+ a^2 + b^2 = c ^2
+ For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
+ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+ Find the product abc.
+ * \param: None
+ * \return: the product abc
+ *
+ */
+int problemNine()
+{
+    int num = 0;
+    bool stop = false;
+    for (int a = 1  ; a <= 1000; a++)
+    {
+    if(stop)
+      break;
+        for (int b = a+1; b<=1000; b++)
+        {
+            if(stop)
+              break;
+            for (int c = b+1; c<=1000; c++)
+            {
+                if( (a + b + c) == 1000   )
+                 {
+                    if( (a*a + b*b) == (c*c)  )
+                    {
+                        cout<<a<< " " <<b<<" "<<c<<endl;
+                        num = a*b*c;
+                        stop = true;
+                        break;
+
+                    }
+                 }
+            }
+        }
+    }
+    return num;
+}
+
+
+
 int main()
 {
     cout<<"---------------------------------------------------------------------"<<endl;
@@ -391,10 +434,16 @@ int main()
     cout<< "Problem 7: The 10 001st Prime number  is: "<<endl;
     cout<< problemSeven() <<endl;
     cout<<"---------------------------------------------------------------------"<<endl;
-*/
+
     cout<< "Problem 8: The Largest product in a series is : "<<endl;
     cout<< problemEight() <<endl;
     cout<<"---------------------------------------------------------------------"<<endl;
+    */
+
+    cout<< "Problem 9: The Pythagorean Triplet is : "<<endl;
+    cout<< problemNine() <<endl;
+    cout<<"---------------------------------------------------------------------"<<endl;
+
     return 0;
 }
 
